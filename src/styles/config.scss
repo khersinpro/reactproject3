@@ -1,0 +1,67 @@
+$white : #FFFFFF ;
+$white-light: rgba(255, 255, 255, 0.5) ;
+$light-txt: rgba(255, 255, 255, 0.75);
+$before-select: #419EBB;
+$background: #070724;
+$btnSelected: #419EBB;
+$buttonHover: #d8d8d820;
+$venus:#EDA249;
+$earth: #6D2ED5;
+$mars: #D14C32;
+$jupiter:#D83A34;
+$saturn: #CD5120;
+$uranus: #1EC1A2;
+$neptune: #2D68F0;
+@keyframes liner {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes planetsUp {
+    from{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@media(max-width: 1100px) {
+    @keyframes planetsUp {
+        
+        from{
+            opacity: 0;
+            transform: translateX(-200px);
+        }
+        to{
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+}
+@keyframes planetsDown {
+    from{
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@media(max-width: 1100px){
+    @keyframes planetsDown {
+        from{
+            opacity: 0;
+            transform: translateX(200px);
+        }
+        to{
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+}

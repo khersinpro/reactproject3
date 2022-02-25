@@ -1,0 +1,816 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&family=Spartan:wght@300;400;500;600;700;800&display=swap');
+@import './config.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+body{
+    background: url('../images/background-stars.svg') $background;
+    min-height: 100vh;
+}
+#root{
+    height: 100%;
+    width: 100%;  
+}
+//************ HEADER + NAVBAR ***********************//
+header{
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    @media(max-width: 1100px) {
+        flex-direction: column;
+        height: auto;
+    }
+    @media(max-width: 726px){
+        height: 71px;
+        flex-direction: row;
+    }
+    h1{
+        font-family: 'Antonio', sans-serif;
+        color: $white;
+        font-weight: normal;
+        font-size: 28px;
+        letter-spacing: -1.05px;
+        margin: 0 32px;
+        @media(max-width: 1100px){
+            margin-top: 32px;
+        }
+        @media(max-width: 726px){
+            margin: 17px 24px;
+        }
+    }
+    .burger{
+        display: none;
+        @media(max-width: 726px){
+            display: block;
+            height: 17px;
+            width: 24px;
+            margin-right: 24px;
+            cursor: pointer;
+        }
+    }
+    .closeNav{
+        @media(max-width: 726px) {
+            transform: translateX(-100%);
+            transition: 0.5s ease;
+        }
+    }
+    nav{
+        display: flex;
+        margin: 0 25px 0 0 ;
+        transition: 0.5s ease;
+        @media(max-width: 1100px){
+            margin: 39px 0 27px 0;
+        }
+        @media(max-width: 726px){
+            margin: 0;
+            flex-direction: column;
+            position: fixed;
+            inset: 72px 0 0 0;
+            background-color: $background ;
+            z-index: 20;
+            padding: 44px 24px;
+        }
+        .navElement{
+            margin: 0 16px;
+            height: 85px;
+            display: flex;
+            @media(max-width: 1100px) {
+                height: auto;
+            }
+            @media(max-width: 726px){
+                height: 60px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                align-items: center;
+                justify-content: space-between;
+            }
+            img{
+                display: none;
+                @media(max-width: 726px) {
+                    display: block;
+                }
+            }
+            .active::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2.5px;
+                background-color: $before-select;
+                top: 2%;
+                @media(max-width: 1100px){
+                    display: none;
+                }
+            }
+            a{
+                color: $light-txt;
+                text-decoration: none;
+                cursor: pointer;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 11px;
+                height: 100%;     
+                display: flex;
+                align-items: center;   
+                position: relative;    
+                @media(max-width: 700px){
+                    font-size: 8px;
+                }
+                @media(max-width: 726px) {
+                    font-size: 15px;
+                    letter-spacing: 1.36364px;
+                    width: 100%;
+                }
+                span{
+                    display: none;
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                    margin-right: 24px;
+                    @media(max-width: 726px){
+                        display: block;
+                    }
+                }
+            }
+            a:hover::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2.5px;
+                background-color: $before-select;
+                top: 2%;
+                animation: navAnim ease 0.3s;
+                @media(max-width: 1100px){
+                    display: none;
+                }
+            }
+            @keyframes navAnim {
+                from{
+                    width: 0%;
+                }
+                to{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+//***************** MAIN **************//
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    @media(max-width: 726px) {
+        position: relative;
+    }
+    .mainContainer{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 1181px;
+        margin: 8% 0 0;
+        @media(max-width: 1250px) {
+            flex-direction: column;
+            width: 100%;
+        }
+        @media(max-width: 1100px) {
+        }
+        @media(max-width: 726px){
+        }
+        .imgContainer{
+            position: relative;            
+            .planet{
+            }
+            .mercury{
+                height: 290px;
+                width: 290px;
+                margin-right: 300px;
+                @media(max-width: 1250px){
+                    margin: 0px 0 100px;
+                }
+                @media(max-width: 1100px) {
+                    height: 184px;
+                    width: 184px;
+                }
+                @media(max-width: 726px){
+                    width: 111px;
+                    height: 111px;
+                    margin: 95px 0 98px;
+                }
+            }
+            .geoMercury{
+                position: absolute;
+                width: 163px;
+                height: 199px;
+                top: 226px;
+                left: 64px;
+                @media(max-width: 1250px){
+                    
+                }
+                @media(max-width: 1100px) {
+                    width: 120px;
+                    height: 150px;
+                    top: 160px;
+                    left: 34px;
+                }
+                @media(max-width: 726px){
+                    width: 80px;
+                    height: 110px;
+                    top: 180px;
+                    left: 16px;
+                }
+            }
+            .venus{
+                height: 400px;
+                width: 400px;
+                margin-right: 245px;
+                @media(max-width: 1250px){
+                    margin: 0px 0 100px;
+                    height: 253px;
+                    width: 253px;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 154px;
+                    height: 154px;
+                    margin: 74px 0 76px;
+                }
+            }
+            .venusGeo{
+                position: absolute;
+                height: 199px;
+                width: 163px;
+                top: 281px;
+                left: 119px;
+                @media(max-width: 1250px){
+                    height: 150px;
+                    width: 120px;
+                    top: 200px;
+                    left: 67px;
+                }
+                @media(max-width: 1100px) {
+
+                }
+                @media(max-width: 726px){
+                    width: 80px;
+                    height: 110px;
+                    top: 180px;
+                    left: 36px;
+                }
+            }
+            .earth, .neptune{
+                height: 450px;
+                width: 450px;
+                margin-right: 220px;
+                @media(max-width: 1250px){
+                    margin: 0px 0 100px;
+                    height: 285px;
+                    width: 285px;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 173px;
+                    height: 173px;
+                    margin: 64px 0 67px;
+                }
+            }
+            .earthGeo, .neptuneGeo{
+                position: absolute;
+                height: 199px;
+                width: 163px;
+                top: 306px;
+                left: 144px;
+                @media(max-width: 1250px){
+                    height: 150px;
+                    width: 120px;
+                    top: 240px;
+                    left: 83px;
+                    
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 80px;
+                    height: 110px;
+                    top: 170px;
+                    left: 44px;
+                }
+            }
+            .mars{
+                height: 336px;
+                width: 336px;
+                margin-right: 277px;
+                @media(max-width: 1250px){
+                    margin: 0px 0 100px;
+                    height: 213px;
+                    width: 213px;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 129px;
+                    height: 129px;
+                    margin: 87px 0 88px;
+                }
+            }
+            .marsGeo{
+                position: absolute;
+                height: 199px;
+                width: 163px;
+                top: 249px;
+                left: 86px;
+                @media(max-width: 1250px){                   
+                    height: 140px;
+                    width: 100px;
+                    top: 180px;
+                    left: 58px;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 80px;
+                    height: 110px;
+                    top: 180px;
+                    left: 24px;
+                }
+            }
+            .jupiter{
+                height: 582px;
+                width: 582px;
+                margin-right: 154px;
+                @media(max-width: 1250px){
+                    margin: 0px 0 100px;
+                    height: 369px;
+                    width: 369px;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 224px;
+                    height: 224px;
+                    margin: 40px 0;
+                }
+            }
+            .jupiterGeo{
+                position: absolute;
+                height: 199px;
+                width: 163px;
+                top: 372px;
+                left: 210px;
+                @media(max-width: 1250px){
+                    height: 150px;
+                    width: 120px;
+                    top: 300px;
+                    left: 124px;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 80px;
+                    height: 110px;
+                    top: 180px;
+                    left: 71px;
+                }
+            }
+            .saturn{
+                height: 582px;
+                width: 582px;
+                margin-right: 154px;
+                @media(max-width: 1250px){
+                    margin: 0px 0 50px;
+                    height: 400px;
+                    width: 400px;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 256px;
+                    height: 256px;
+                    margin: 24px 0; 
+                }
+            }
+            .saturnGeo{
+                position: absolute;
+                height: 199px;
+                width: 163px;
+                top: 392px;
+                left: 208px;
+                @media(max-width: 1250px){
+                    height: 150px;
+                    width: 120px;
+                    top: 280px;
+                    left: 139px;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 80px;
+                    height: 110px;
+                    top: 180px;
+                    left: 87px;
+                }
+            }
+            .uranus{
+                height: 458px;
+                width: 458px;
+                margin-right: 216px;
+                @media(max-width: 1250px){
+                    margin: 0px 0 100px;
+                    height: 290px;
+                    width: 290px;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 176px;
+                    height: 176px;
+                    margin: 63px 0 65px;
+                }
+            }
+            .uranusGeo{
+                position: absolute;
+                height: 199px;
+                width: 163px;
+                top: 310px;
+                left: 148px;
+                @media(max-width: 1250px){                    
+                    height: 150px;
+                    width: 120px;
+                    top: 230px;
+                    left: 90px;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    width: 80px;
+                    height: 110px;
+                    top: 190px;
+                    left: 48px;
+                }
+            }
+        }
+        .description{
+            width: 350px;
+            margin: 0px 0px 0 0px;
+            @media(max-width: 1250px) {
+                display: flex;
+                align-items: center;
+                width: auto;
+            }
+            @media(max-width: 1100px) {
+                
+            }
+            @media(max-width: 726px){
+            }
+            &__container{
+                color:$white;
+                @media(max-width: 1250px) {
+                    width: 400px;
+                    height: 290px;
+                    margin-right: 90px;
+                }
+                @media(max-width: 1100px) {
+                    width: 339px;
+                    height: 253px;
+                    margin-right: 69px;
+                }
+                @media(max-width: 726px){
+                    width: 327px;
+                    height: 235px;
+                    margin: 0;
+                    text-align: center;
+                }
+                h2{
+                    font-weight: normal;
+                    font-size: 80px;
+                    font-family: 'Antonio', sans-serif;
+                    margin: 23px 0;
+                    @media(max-width: 1250px) {
+                        margin: 0 0 23px;
+                    }
+                    @media(max-width: 1100px) {
+                    }
+                    @media(max-width: 726px){
+                        font-size: 40px;
+                    }
+                }
+                &--txt{
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 25px;
+                    margin: 0 0 23px;
+                    width: 100%;
+                    height: 150px;
+                    animation: liner 0.4s linear;
+                    @media(max-width: 1250px) {
+
+                    }
+                    @media(max-width: 1100px) {
+                        height: 110px;
+                        font-size: 11px;
+                        line-height: 22px;
+                    }
+                    @media(max-width: 726px){
+                    }
+                }
+                &--src{
+                    display: flex;
+                    align-items: center;
+                    margin: 0 0 31px;
+                    p{
+                        margin: 0 10px 0 0;
+                        font-size: 14px;
+                        color: $white-light;
+                    }
+                    a{
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                        cursor: pointer;
+                        span{
+                            margin: 0 10px 0 0;
+                            border-bottom: 1px solid $white-light;
+                            font-weight: bold;
+                            font-size: 14px;
+                            color: $white-light;
+                            @media(max-width: 726px) {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            &__Btn{
+                @media(max-width: 1250px) {
+                    display: flex;
+                    flex-direction: column;
+                }
+                @media(max-width: 1100px) {
+                }
+                @media(max-width: 726px){
+                    position: absolute;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                    padding: 6px 24px;
+                }
+                .activeBtn0{
+                    background: $btnSelected;
+                    @media(max-width: 726px) {
+                        background: none;
+                        &::after{
+                            height: 4px;
+                            width: 100%;
+                            background-color: rgb(255, 255, 255);
+                            content: "";
+                            display: block;
+                            animation: liner 0.5s ease;
+                        }
+                    }
+                }
+                .activeBtn1{
+                    background: $venus;
+                    @media(max-width: 726px) {
+                        background: none;
+                        &::after{
+                            height: 4px;
+                            width: 100%;
+                            background-color: $venus;
+                            content: "";
+                            display: block;
+                            animation: liner 0.5s ease;
+                        }
+                    }
+                }
+                .activeBtn2{
+                    background: $earth;
+                    @media(max-width: 726px) {
+                        background: none;
+                        &::after{
+                            height: 4px;
+                            width: 100%;
+                            background-color: $earth;
+                            content: "";
+                            display: block;
+                            animation: liner 0.5s ease;
+                        }
+                    }
+                }
+                .activeBtn3{
+                    background: $mars;
+                    @media(max-width: 726px) {
+                        background: none;
+                        &::after{
+                            height: 4px;
+                            width: 100%;
+                            background-color: $mars;
+                            content: "";
+                            display: block;
+                            animation: liner 0.5s ease;
+                        }
+                    }
+                }
+                .activeBtn4{
+                    background: $jupiter;
+                    @media(max-width: 726px) {
+                        background: none;
+                        &::after{
+                            height: 4px;
+                            width: 100%;
+                            background-color: $jupiter;
+                            content: "";
+                            display: block;
+                            animation: liner 0.5s ease;
+                        }
+                    }
+                }
+                .activeBtn5{
+                    background: $saturn;
+                    @media(max-width: 726px) {
+                        background: none;
+                        &::after{
+                            height: 4px;
+                            width: 100%;
+                            background-color: $saturn;
+                            content: "";
+                            display: block;
+                            animation: liner 0.5s ease;
+                        }
+                    }
+                }
+                .activeBtn6{
+                    background: $uranus;
+                    @media(max-width: 726px) {
+                        background: none;
+                        &::after{
+                            height: 4px;
+                            width: 100%;
+                            background-color: $uranus;
+                            content: "";
+                            display: block;
+                            animation: liner 0.5s ease;
+                        }
+                    }
+                }
+                .activeBtn7{
+                    background: $neptune;
+                    @media(max-width: 726px) {
+                        background: none;
+                        &::after{
+                            height: 4px;
+                            width: 100%;
+                            background-color: $neptune;
+                            content: "";
+                            display: block;
+                            animation: liner 0.5s ease;
+                        }
+                    }
+                }
+                button{
+                    height: 40px;
+                    width: 100%;
+                    background: $background;
+                    margin: 8px 0;
+                    border: solid 1px rgba(255, 255, 255, 0.2);
+                    color: white;
+                    text-align: start;
+                    padding-left: 30px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    line-height: 42px;
+                    &:hover{
+                        background: $buttonHover;
+                        transition: 0.2s linear;
+                    }
+                    @media(max-width: 1250px) {
+                        width: 320px;
+                    }
+                    @media(max-width: 1100px) {
+                        width: 281px;
+                    }
+                    @media(max-width: 726px){
+                        width: auto;
+                        border: none;
+                        font-size: 10px;
+                        text-align: center;
+                        letter-spacing: 1.92857px;
+                        margin: 0;
+                        padding: 0;
+                        span{
+                            display: none;
+                        }
+                    }
+                    span{
+                        pointer-events: none;
+                    }
+                    .spanNumber{
+                        color: rgba(255, 255, 255, 0.5);
+                        margin-right: 10px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    .footerBoxs{
+        display: flex;
+        justify-content: space-between;
+        margin: 87px 0 50px;
+        width: 1181px;
+        @media(max-width: 1250px) {
+            width: 810px;
+        }
+        @media(max-width: 1100px) {
+            width: 689px;
+        }
+        @media(max-width: 726px){
+            width: auto;
+            flex-direction: column;
+            height: 215px;
+            margin: 29px 0 50px;
+        }
+        .footerBox{
+            padding: 20px 23px;
+            height: 128px;
+            width: 255px;
+            border: 1px solid $white-light;
+            @media(max-width: 1250px) {
+                width: 190px;
+                height: 110px;
+            }
+            @media(max-width: 1100px) {
+                width: 164px;
+                height: 88px;
+            }
+            @media(max-width: 726px){
+                width: 327px;
+                height: 48px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 24px;
+            }
+            h3{
+                letter-spacing: 1px;
+                font-weight: bold;
+                font-size: 11px;
+                color: $white-light;
+                margin: 0 0 4px;
+                @media(max-width: 1250px){
+                    
+                }
+                @media(max-width: 1100px) {
+                    font-size: 8px;
+                }
+                @media(max-width: 726px){
+                    font-size: 8px;
+                    letter-spacing: 0.727273px;
+                    height: auto;
+                    margin: 0;
+                }
+            }
+            p{
+                font-family: 'Antonio', sans-serif;
+                letter-spacing: -1.5px;
+                font-size: 40px;
+                color: $white;
+                @media(max-width: 1250px){
+                    font-size: 35px;
+                }
+                @media(max-width: 1100px) {
+                    font-size: 24px;
+                    letter-spacing: -0.9px;
+                }
+                @media(max-width: 726px){
+                    font-size: 20px;
+                    letter-spacing: -0.75px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
