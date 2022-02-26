@@ -10,6 +10,7 @@ import Jupiter from './components/Jupiter'
 import Saturn from './components/Saturn'
 import Uranus from './components/Uranus'
 import Neptune from './components/Neptune'
+import Error from './components/404';
 import './styles/main.scss';
 
 function App() {
@@ -83,6 +84,7 @@ function App() {
           <Route path='/reactproject3/saturn'  element={<Saturn btnSelected={btnSelected} datas={datas} choice1={choice1} choice2={choice2} choice3={choice3} />}  />
           <Route path='/reactproject3/uranus'  element={<Uranus btnSelected={btnSelected} datas={datas} choice1={choice1} choice2={choice2} choice3={choice3} />}  />
           <Route path='/reactproject3/neptune' element={<Neptune btnSelected={btnSelected} datas={datas} choice1={choice1} choice2={choice2} choice3={choice3} />} />
+          <Route path='/*' element={<Error />} />
         </Routes>
       </Fragment>
     </BrowserRouter>

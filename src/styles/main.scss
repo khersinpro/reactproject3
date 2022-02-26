@@ -96,12 +96,36 @@ header{
                     display: block;
                 }
             }
+            .mercuryBefore::before{
+                background-color: $before-select;
+            }
+            .venusBefore::before{
+                background-color: $venus;
+            }
+            .earthBefore::before{
+                background-color: $earth;
+            }
+            .marsBefore::before{
+                background-color: $mars;
+            }
+            .jupiterBefore::before{
+                background-color: $jupiter;
+            }
+            .saturnBefore::before{
+                background-color: $saturn;
+            }
+            .uranusBefore::before{
+                background-color: $uranus;
+            }
+            .neptuneBefore::before{
+                background-color: $neptune;
+            }
             .active::before{
                 content: "";
                 position: absolute;
                 width: 100%;
                 height: 2.5px;
-                background-color: $before-select;
+                
                 top: 2%;
                 @media(max-width: 1100px){
                     display: none;
@@ -142,8 +166,7 @@ header{
                 content: "";
                 position: absolute;
                 width: 100%;
-                height: 2.5px;
-                background-color: $before-select;
+                height: 2.5px;           
                 top: 2%;
                 animation: navAnim ease 0.3s;
                 @media(max-width: 1100px){
@@ -802,7 +825,21 @@ main{
     }
 }
 
+//********** 404 ERROR ************/
 
+.errorPage{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    p{
+        font-size: 30px;
+        margin-top: 40px;
+    }
+}
 
 
 
